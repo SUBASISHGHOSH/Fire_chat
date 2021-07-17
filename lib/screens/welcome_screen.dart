@@ -33,6 +33,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     logoController.addListener(() {
       setState(() {});
     });
+
     colorController = AnimationController(
       vsync: this,
       duration: Duration(seconds: 1),

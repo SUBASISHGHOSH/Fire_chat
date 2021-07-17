@@ -75,14 +75,14 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                   TextButton(
                     onPressed: () {
-                      textFieldController.clear();
-                      messageText == ''
+                      messageText != null
                           ? _firestore.collection('messages').add({
                               'text': messageText,
                               'sender': loggedInUser!.email,
                               'timestamp': FieldValue.serverTimestamp(),
                             })
-                          : Fluttertoast.showToast(msg: 'Type a Message...');
+                          : Fluttertoast.showToast(msg: 'Type a message...');
+                      textFieldController.clear();
                       messageText = null;
                     },
                     child: Text(
@@ -167,7 +167,7 @@ class MessageBubble extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
               child: Text(
-                text ?? '',
+                text!,
               ),
             ),
           ),
