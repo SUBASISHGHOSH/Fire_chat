@@ -17,6 +17,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   late Animation logoAnimation;
   late Animation colorAnimation;
   String title = '';
+  String MAR = 'for commit';
   List<String> animatedTitle = ('Flash Chat').split('');
   @override
   void initState() {
